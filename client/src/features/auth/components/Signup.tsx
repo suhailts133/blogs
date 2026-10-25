@@ -75,8 +75,8 @@ export default function Signup() {
                 />
                 <SubmitButton
                     isLoading={isLoading}
-                    label="Login"
-                    loadingLabel="Verifying"
+                    label="Sign Up"
+                    loadingLabel="Sending OTP..."
                     type="submit"
                 />
             </form>
