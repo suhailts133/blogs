@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Production build outputs
+dist/
+build/
+
+# Package lock files (handled by package managers, not formatters)
+package-lock.json
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Git internals
+.git/
