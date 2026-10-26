@@ -1,5 +1,6 @@
 import type mongoose from "mongoose";
 import type { ImageResult } from "../common/image.interface";
+import type { IUser } from "../user/user.interface";
 
 export interface IBlog {
   id: string;
@@ -7,5 +8,9 @@ export interface IBlog {
   title: string;
   description: string;
   image: ImageResult;
-  createdAt: string;
+  createdAt: Date;
 }
+
+export type IBlogPopulated = Omit<IBlog, "userId"> & {
+  userId: IUser;
+};

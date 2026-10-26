@@ -1,4 +1,4 @@
-import type { BlogsDTO } from "../dtos/blog/blog.dto";
+import type { BlogsDTO, UpdatePrefillBlogDTO } from "../dtos/blog/blog.dto";
 import type { CreateBlogDTO } from "../dtos/blog/create-blog.dto";
 import type { UpdateBlogDTO } from "../dtos/blog/update-blog.dto";
 import type { IBlog } from "../interface/blog/blog.interface";
@@ -73,10 +73,10 @@ export class BlogService implements IBlogService {
     };
   }
 
-  async getBlog(blogId: string): Promise<IApiResponse<BlogsDTO>> {
+  async getBlog(blogId: string): Promise<IApiResponse<UpdatePrefillBlogDTO>> {
     const blog = await this._blogRepo.findById(blogId);
     if (!blog) throw new AppError(BLOG_MESSAGES.BLOG.NOT_FOUND, RESPONSE_CODE.NOT_FOUND);
-    const blogData = BlogMapper.toBlogDto(blog);
+    const blogData = BlogMapper.toBlogUpdateDto(blog);
     return { message: BLOG_MESSAGES.BLOG.FETCH_ONE, data: blogData };
   }
 }

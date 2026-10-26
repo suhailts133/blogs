@@ -1,4 +1,4 @@
-import type { BlogsDTO } from "../../dtos/blog/blog.dto";
+import type { BlogsDTO, UpdatePrefillBlogDTO } from "../../dtos/blog/blog.dto";
 import type { CreateBlogDTO } from "../../dtos/blog/create-blog.dto";
 import type { UpdateBlogDTO } from "../../dtos/blog/update-blog.dto";
 import type { IApiResponse, IApiResponseWithPagination } from "../common/api.response.interface";
@@ -8,6 +8,6 @@ export interface IBlogService {
   updateBlog(data: UpdateBlogDTO, image?: Express.Multer.File): Promise<IApiResponse>;
   deleteBlog(blogId: string): Promise<IApiResponse>;
   getMyBlogs(userId: string, page?: string): Promise<IApiResponseWithPagination<BlogsDTO[]>>;
-  getBlog(blogId: string): Promise<IApiResponse<BlogsDTO>>;
+  getBlog(blogId: string): Promise<IApiResponse<UpdatePrefillBlogDTO>>;
   allBlogs(page?: string): Promise<IApiResponseWithPagination<BlogsDTO[]>>;
 }
