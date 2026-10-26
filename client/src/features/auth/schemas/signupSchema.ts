@@ -4,7 +4,7 @@ import { emailField, passwordField, textField } from "../../../shared/schema/fie
 export const signupSchema = z
   .object({
     email: emailField,
-    name: textField("name is required", "name must be at least 3 characters", "name must be under 50 characters", 7, 50),
+    name: textField("name is required", "name must be at least 3 characters", "name must be under 50 characters", 3, 50),
     password: passwordField,
     confirmPassword: z.string(),
   })

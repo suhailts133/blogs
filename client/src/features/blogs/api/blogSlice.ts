@@ -1,11 +1,11 @@
 import { API_ROUTES } from "../../../api/apiRoutes";
 import { baseApi } from "../../../api/baseApi";
 import type { IApiResponse, IApiResponseWithPagination } from "../../../api/responseType";
-import type { BlogsDTO } from "../type/blog.interface";
+import type { BlogsDTO, UpdatePrefillBlogDTO } from "../type/blog.interface";
 
 export const blogSlice = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getBlog: builder.query<IApiResponse<BlogsDTO>, string>({
+    getBlog: builder.query<IApiResponse<UpdatePrefillBlogDTO>, string>({
       query: (id) => ({
         url: `${API_ROUTES.BLOG.ONE}/${id}`,
         method: "GET",

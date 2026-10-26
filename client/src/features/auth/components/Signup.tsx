@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { InputField } from "../../../shared/components/InputField";
-import SubmitButton from "../../../shared/components/SubmitButton";
+import { InputField } from "../../../shared/components/form/InputField";
+import SubmitButton from "../../../shared/components/form/SubmitButton";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { signupSchema, type SignupFormType } from "../schemas/signupSchema";

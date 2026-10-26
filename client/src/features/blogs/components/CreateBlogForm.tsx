@@ -1,9 +1,9 @@
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { InputField } from "../../../shared/components/InputField";
-import SubmitButton from "../../../shared/components/SubmitButton";
-import { TextAreaField } from "../../../shared/components/TextAreaField";
-import { FileInputField } from "../../../shared/components/FileInputField";
+import { InputField } from "../../../shared/components/form/InputField";
+import SubmitButton from "../../../shared/components/form/SubmitButton";
+import { TextAreaField } from "../../../shared/components/form/TextAreaField";
+import { FileInputField } from "../../../shared/components/form/FileInputField";
 import { useImagePreview } from "../../../shared/hooks/useImagePreview";
 import { createBlogSchema, type CreateBlogFormType } from "../schema/createBlogSchema";
 import { usePostBlog } from "../hooks/usePostBlog";

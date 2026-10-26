@@ -1,4 +1,4 @@
-import SubmitButton from "./SubmitButton"
+import SubmitButton from "../form/SubmitButton"
 
 type Props = {
     isOpen: boolean

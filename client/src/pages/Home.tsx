@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom"
 import { useGetAllBlogQuery } from "../features/blogs/api/blogSlice"
-import Pagination from "../shared/components/Pagination"
-import Spinner from "../shared/components/Spinner"
+import Pagination from "../shared/components/common/Pagination"
+import Spinner from "../shared/components/common/Spinner"
 import BlogCard from "../features/blogs/components/BlogCard"
 
 export default function Home() {

@@ -1,16 +1,16 @@
 import { useParams } from "react-router-dom";
 import { useGetBlogQuery } from "../api/blogSlice";
-import Spinner from "../../../shared/components/Spinner";
+import Spinner from "../../../shared/components/common/Spinner";
 import { AlertCircle } from "lucide-react";
-import type { BlogsDTO } from "../type/blog.interface";
+import type { UpdatePrefillBlogDTO } from "../type/blog.interface";
 import { useForm, useWatch } from "react-hook-form";
 import { editBlogSchema, type EditBlogFormType } from "../schema/editBlogSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useImagePreview } from "../../../shared/hooks/useImagePreview";
-import { FileInputField } from "../../../shared/components/FileInputField";
-import { InputField } from "../../../shared/components/InputField";
-import SubmitButton from "../../../shared/components/SubmitButton";
-import { TextAreaField } from "../../../shared/components/TextAreaField";
+import { FileInputField } from "../../../shared/components/form/FileInputField";
+import { InputField } from "../../../shared/components/form/InputField";
+import SubmitButton from "../../../shared/components/form/SubmitButton";
+import { TextAreaField } from "../../../shared/components/form/TextAreaField";
 import { useUpdateBlog } from "../hooks/useUpdateBlog";
 import { useHandleResponse } from "../../../shared/hooks/useHandleResponse";
 
@@ -30,11 +30,11 @@ export default function EditBlogForm() {
         );
     }
 
-    return <EditBlogFormInner key={id} defaultData={data.data as BlogsDTO} />;
+    return <EditBlogFormInner key={id} defaultData={data.data as UpdatePrefillBlogDTO} />;
 }
 
 interface Props {
-    defaultData: BlogsDTO;
+    defaultData: UpdatePrefillBlogDTO;
 }
 
 function EditBlogFormInner({ defaultData }: Props) {
